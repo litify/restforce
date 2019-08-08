@@ -184,7 +184,6 @@ module Restforce
       # Restforce.configuration.mashify is false.
       def query(soql)
         response = api_get 'query', q: soql
-        byebug
         mashify? ? response.body : response.body['records']
       end
 
